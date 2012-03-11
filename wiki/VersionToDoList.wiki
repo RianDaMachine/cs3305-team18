@@ -12,21 +12,21 @@ Add your content here.
 
 Upcoming Version 0.8
 
-*Timetable.jsp 
+*Timetable.jsp*
   
-   *Calendar* 
-    *Scrollable calendar
-    *Showing dates / times /months  dynamically on calendar
-    *Calendar view , monthly/weekly 
-    *Coloring of cells if occupied
-    *Delete / Edit / Remove items from cells jScript
+    Calendar 
+    * Scrollable calendar
+    * Showing dates / times /months  dynamically on calendar
+    * Calendar view , monthly/weekly 
+    * Coloring of cells if occupied
+    * Delete / Edit / Remove items from cells jScript
 
-   *Menu*
-    *Admin/Help/Contact pages to be completed
-    *Each menu item must be filled with useful info
+    Menu 
+    * Admin/Help/Contact pages to be completed
+    * Each menu item must be filled with useful info
 
-   *Forms
-    *Need to be able to send information via forms to Servlet
-    *Starting inserting data into DB from calendar inputs
-    *How to pickup calendar updates/activity?
+    Forms 
+    * Need to be able to send information via forms to Servlet
+    * Starting inserting data into DB from calendar inputs
+    * How to pickup calendar updates/activity?
   
