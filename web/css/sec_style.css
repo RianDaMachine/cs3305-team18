@@ -1,0 +1,221 @@
+body{
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:20px;
+    background:#eff3f6;
+}
+
+#innerContent{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    opacity: 0.9;
+    width: 700px;
+}
+
+#firstDrop{
+    text-align: center;
+    font-size: 1.1em;
+}
+
+#answer{
+    font-size: 10px;
+    margin-left: 550px;
+    margin-top: 400px;
+    position: absolute;
+}
+
+#answer input{
+    float:left;
+    font-size:25px;
+    padding:4px 2px;
+    border:solid 1px #aacfe4;
+    width:200px;
+    margin:2px 0 20px 10px;
+}
+
+#table_wrapper{
+    font-size: 15px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#table{
+    margin-top: 50px;
+    position: absolute;
+    margin-left : 240px;
+    background-color: #d9e3ee;
+    border: 1px black solid;
+    padding: 5px;
+    border-collapse: collapse;
+    width: 70%;
+    font-size: 13px;
+    z-index : -100;
+}
+
+td, th{
+    margin: auto;
+    border: 1px solid #eee;
+    padding: .6em 10px; 
+}
+
+#table td:hover{
+    background-color: #91D2FF;
+}
+
+#table td:active, #table td:focus{
+    background-color: burlywood;
+}
+
+#group{
+    position: absolute;
+    width: 200px;
+    margin-left: 1000px;
+    margin-top: 250px;
+    border: 1px solid RGB(71, 94, 118);
+    background-color: RGB(44, 71, 98);
+    padding: 10px;
+}
+
+#login{
+    border: 1px solid RGB(44, 71, 98);
+    background-color: RGB(71, 94, 118);
+    font-size: 15px;
+    padding: 10px;
+    width: 90px;
+    margin-top: 470px;
+    margin-left: 670px;
+    position: absolute;
+}
+
+#reg_page{
+    border: 1px solid RGB(44, 71, 98);
+    background-color: RGB(71, 94, 118);
+    font-size: 15px;
+    padding: 10px;
+    width: 80px;
+    text-align: center;
+    margin-top: 470px;
+    margin-left: 770px;
+    position: absolute;
+}
+
+#reg_page a{
+    text-decoration: none;
+    color: white;
+}
+
+#reg_page a:link, #reg_page a:visited{
+    color: white;
+}
+
+/* Pop-up meeting box*/
+label, input { display:block; }
+input.text { margin-bottom:12px; width:95%; padding: .4em; }
+fieldset { padding:0; border:0; margin-top:25px; }
+h1 { font-size: 1.2em; margin: .6em 0; }
+div#users-contain { width: 350px; margin: 40px 0; position: absolute;}
+div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+.ui-dialog .ui-state-error { padding: .3em; }
+
+
+
+/* Tag-Editor */
+attending label {
+    font: bold italic 1.6em Times, 'Times New Roman', serif;
+    font-size: 16px;
+    text-transform: lowercase;
+    color: #333;
+    padding: .4em 0;
+}
+
+#attending input:focus {
+    outline: none;
+}
+
+.tag-editor {
+    -webkit-border-radius: 3px;
+    padding: 10px;
+    border-color: #aacfe4;
+}
+
+.tag-editor label { display: block; }
+
+.tag-editor input {
+    border: none;
+    background: none;
+    padding: .2em 0;
+    width: 50px;
+    /*  float: left;*/
+}
+
+.tag-editor .tags-container {
+    background: white;
+    -webkit-border-radius: 3px;
+    padding: 3px;
+    margin: 0;
+    width: 200px;
+}
+
+.tag-editor span {
+    background: #eee;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    -webkit-border-radius: 2px;
+    margin: 0 .4em .4em 0;
+    padding: 0 .2em 0 .4em;
+    display: block;
+    float: left;
+}
+
+.tag-editor span a {
+    -webkit-border-radius: 2px;
+    padding: 0 .4em;
+    color: #999999;
+    text-decoration: none;
+    margin-left: .4em;
+}
+.tag-editor span a:hover {
+    color: #ccc;
+}
+
+.tag-editor span a:active {
+    color: white;
+}
+
+.visualClear { 
+    clear: both; 
+}
+
+.boxBody
+{
+    background:#fefefe;
+    border-top:1px solid #dde0e8;
+    border-bottom:1px solid #dde0e8;
+    padding:10px 20px;
+}
+
+.box
+{
+    background:#fefefe;
+    border: 1px solid #C3D4DB;
+    border-top:1px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    -moz-box-shadow:rgba(0,0,0,0.15) 0 0 1px;
+    -webkit-box-shadow:rgba(0,0,0,0.15) 0 0 1px;
+    box-shadow:rgba(0,0,0,0.15) 0 0 1px;
+    color:#444;
+    font:normal 12px/14px Arial, Helvetica, Sans-serif;
+    margin:0 auto 30px;
+    overflow:hidden;
+}
+.box.login a
+{
+    text-decoration : none;
+}
+.box.login li {
+    display : block;
+}

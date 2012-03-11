@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<!-- web.xml for passport webapp -->
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    
+    <!-- Servlet/JSP definitions -->
+    
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>classes.LoginServlet</servlet-class>
+        <init-param>
+            <param-name>loginURL</param-name>
+            <param-value>/main</param-value>
+        </init-param>
+    </servlet>
+    
+    
+    
+    
+    
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>classes.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Index</servlet-name>
+        <jsp-file>/jsp/index.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterSuccess</servlet-name>
+        <jsp-file>/jsp/redirects/registerSuccess.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Timetable</servlet-name>
+        <jsp-file>/jsp/timetable.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <jsp-file>/jsp/register.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <jsp-file>/jsp/redirects/logout.jsp</jsp-file>
+    </servlet>
+    
+    
+    <!-- Servlet/JSP mappings -->
+    
+    
+    <servlet>
+        <servlet-name>ForgetPassword</servlet-name>
+        <jsp-file>/jsp/forgotPassword.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Student</servlet-name>
+        <jsp-file>/jsp/student.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Lecturer</servlet-name>
+        <jsp-file>/jsp/lecturer.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterRetry</servlet-name>
+        <jsp-file>/jsp/registerRetry.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>AlreadyRegistered</servlet-name>
+        <jsp-file>/jsp/redirects/alreadyRegistered.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>LecturerWait</servlet-name>
+        <jsp-file>/jsp/redirects/lecturerWait.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>ForgotPassword</servlet-name>
+        <servlet-class>classes.ForgotPassword</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ResetSuccess</servlet-name>
+        <jsp-file>/jsp/redirects/resetSuccess.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Admin</servlet-name>
+        <jsp-file>/jsp/admin.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Help</servlet-name>
+        <jsp-file>/jsp/help.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Contact</servlet-name>
+        <servlet-class>classes.Contact</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Index</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Timetable</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterSuccess</servlet-name>
+        <url-pattern>/success</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/registerPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForgetPassword</servlet-name>
+        <url-pattern>/forgot</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Student</servlet-name>
+        <url-pattern>/Student</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Lecturer</servlet-name>
+        <url-pattern>/Lecturer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterRetry</servlet-name>
+        <url-pattern>/retry</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AlreadyRegistered</servlet-name>
+        <url-pattern>/alreadyReg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LecturerWait</servlet-name>
+        <url-pattern>/lecturerWait</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForgotPassword</servlet-name>
+        <url-pattern>/mailPassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResetSuccess</servlet-name>
+        <url-pattern>/resetSuccess</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Admin</servlet-name>
+        <url-pattern>/Admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Help</servlet-name>
+        <url-pattern>/Help</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Contact</servlet-name>
+        <url-pattern>/Contact</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>5</session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>/jsp/index.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/jsp/redirects/notFound.jsp</location>
+    </error-page>
+a
+    </web-app>
