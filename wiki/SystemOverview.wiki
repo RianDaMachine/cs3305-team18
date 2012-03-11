@@ -1,4 +1,4 @@
-#summary Short descriptions of project files
+#summary Short descriptions of project files / Run through of structure
 #labels Phase-Implementation
 
 = Introduction =
