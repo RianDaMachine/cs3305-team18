@@ -45,7 +45,7 @@
             </footer>
         </form>
         <footer id="main">
-            <a href="<c:out value="${pageContext.servletContext.contextPath}"/>">@ Time Corp. 2012</a>
+            <a href="<c:out value="${pageContext.servletContext.contextPath}"/>">@ TimeFinder Corp. 2012</a>
         </footer>
     </body>
 </html>
