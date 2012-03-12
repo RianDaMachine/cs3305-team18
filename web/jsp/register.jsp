@@ -16,7 +16,7 @@
                 <input type="text" name="username" value="" tabindex="1" placeholder="UserName" required>
                     
                 <label>Password</label>
-                <input type="password" name="password" value="" placeholder="Password" tabindex="2" required>
+                <input type="password" name="password" value="" placeholder="Password" tabindex="1" required>
                     
                 <label>First Name</label>
                 <input type="text" name="firstname" value="" tabindex="1" placeholder="First name" required>
