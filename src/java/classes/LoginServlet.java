@@ -74,15 +74,16 @@ public class LoginServlet extends HttpServlet {
         // check username
         if (!dataManager.checkUid(uid)) {
             //not valid!
-            if ( ! dataManager.checkVerified()) {
+            System.out.println("checkVerfied : " + dataManager.checkVerified());
+            if ( ! dataManager.checkVerified() ) {
                 System.out.println("I FUCKING WENT IN HERE!");
                 loginErr.put("username", dataManager.getNotVerified());
-            } else {
+                loginErr.put("userReturn", "");
+            }else {
                 System.out.println("VERIFIED MATE");
                 // is a verified lecturer
                 loginErr.put("username", "Invalid user ID");
                 loginErr.put("userReturn", "");
-                
             }
             loginErr.put("userReturn", "");
             isValid = false;

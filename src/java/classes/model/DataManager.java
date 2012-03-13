@@ -330,12 +330,17 @@ public class DataManager {
                 } else {
                     // username is valid , but is userGroup = lecturer?
                     if (getUserGroupName(userName, "lecturer").equals("lecturer")) {
+                        System.out.println("This should fail!");
                         if (!isLecturerVerified(userName)) {
                             // has not been verified by admin
                             isValid = false;
                             notVerified = "You have not been verified by the system admin";
                             verified = false;
                         }
+                    }else {
+                        System.out.println("Here as EXPECTED");
+                        // is a student
+                        verified = true;
                     }
                 }
 
