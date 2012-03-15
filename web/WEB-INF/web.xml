@@ -94,7 +94,12 @@
     <servlet>
         <servlet-name>SuperUser</servlet-name>
         <jsp-file>/jsp/superUser.jsp</jsp-file>
-    </servlet><servlet-mapping>
+    </servlet>
+    <servlet>
+        <servlet-name>SoloScheduleServlet</servlet-name>
+        <servlet-class>classes.SoloScheduleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
         <servlet-name>Index</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
@@ -169,6 +174,10 @@
     <servlet-mapping>
         <servlet-name>SuperUser</servlet-name>
         <url-pattern>/superUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SoloScheduleServlet</servlet-name>
+        <url-pattern>/soloServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>5</session-timeout>

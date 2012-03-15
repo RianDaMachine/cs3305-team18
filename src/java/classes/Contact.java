@@ -1,5 +1,6 @@
 package classes;
 
+import classes.model.PostMail;
 import classes.beans.UserBean;
 import classes.model.DataManager;
 import java.io.IOException;

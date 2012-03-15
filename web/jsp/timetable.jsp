@@ -370,40 +370,83 @@
 
     <div class="demo">
 
+       <div id="editRemove" title="Choose Type">
+            <button class="edit">Edit?</button>
+            <button class="remove">Remove?</button>
+       </div> 
+        
+        
         <div id="formOption" title="Choose Type">
             <button class="groupForm">Group / Several</button>
             <button class="self">Personal</button>
         </div>
 
+         <!-- PERSONAL -->
         <div class="meeting">  
-            <form action="DECIDE WHAT TO DO HERE" method="POST">
+            <form action="soloServlet" method="POST">
             <label for="where">Title</label>
-            <input type="text" name="when" id="when" class="text ui-widget-content ui-corner-all" />
+            <input type="text" name="title" id="when" class="text ui-widget-content ui-corner-all" required/>
 
             <label for="when">Duration</label>
-            <input type="text" name="where" id="where" class="text ui-widget-content ui-corner-all" />
+            <label for="when">(Determined in hours)</label>
+            <select name="duration" >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="3">4</option>
+                <option value="3">5</option>
+                <option value="3">6</option>
+                <option value="3">7</option>
+                <option value="3">8</option>
+                <option value="3">9</option>
+                <option value="3">10</option>
+            </select>
 
             <label for="Comments">Comments</label>
             <input type="text" name="comments" id="comments" class="text ui-widget-content ui-corner-all" />
 
             <label for="when">Will this be a recurring event ?</label>
-            <select>
-                <option value="0">Not recurring  </option>
-                <option value="1">1 week</option>
-                <option value="2">2 weeks</option>
-                <option value="3">3 weeks</option>
+            <label for="when">(Determined in weeks)</label>
+            <select name="recurring" >
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="3">4</option>
+                <option value="3">5</option>
+                <option value="3">6</option>
+                <option value="3">7</option>
+                <option value="3">8</option>
+                <option value="3">9</option>
+                <option value="3">10</option>
             </select>
-            <input type="submit" class="btnLogin" value="Schedule!" tabindex="4">
+            <div class="scheduleInfo">
+                <input type="submit" class="btnLogin" value="Schedule!" tabindex="4">
+            </div>
             </form>
         </div>
 
-        <div id="dialog-form">
+        
+         <!-- GROUP / SEVERAL -->
+         <div id="dialog-form">
             <form action="DECIDE WHAT TO DO HERE" method="POST">
             <label for="where">Title</label>
             <input type="text" name="when" id="when" class="text ui-widget-content ui-corner-all" />
 
             <label for="when">Duration</label>
-            <input type="text" name="where" id="where" class="text ui-widget-content ui-corner-all" />
+            <label for="when">(Determined in hours)</label>
+            <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="3">4</option>
+                <option value="3">5</option>
+                <option value="3">6</option>
+                <option value="3">7</option>
+                <option value="3">8</option>
+                <option value="3">9</option>
+                <option value="3">10</option>
+            </select>
 
             <label for="where">Choose a group?</label>
             <input type="text" name="when" id="when" class="text ui-widget-content ui-corner-all" />
@@ -421,13 +464,23 @@
                 </div>
             </div>
             <label for="when">Will this be a recurring event ?</label>
+            <label for="when">(Determined in weeks)</label>
             <select>
-                <option value="0">Not recurring  </option>
-                <option value="1">1 week</option>
-                <option value="2">2 weeks</option>
-                <option value="3">3 weeks</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="3">4</option>
+                <option value="3">5</option>
+                <option value="3">6</option>
+                <option value="3">7</option>
+                <option value="3">8</option>
+                <option value="3">9</option>
+                <option value="3">10</option>
             </select>
-            <input type="submit" class="btnLogin" value="Schedule!" tabindex="4">
+            <div class="scheduleInfo">
+                <input type="submit" class="btnLogin" value="Schedule!" tabindex="4">
+            </div>
             </form>
         </div>   
         

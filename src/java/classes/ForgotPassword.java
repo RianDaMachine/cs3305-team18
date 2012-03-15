@@ -1,5 +1,6 @@
 package classes;
 
+import classes.model.PostMail;
 import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.http.*;
