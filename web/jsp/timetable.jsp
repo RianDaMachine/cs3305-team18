@@ -375,7 +375,8 @@
             <button class="self">Personal</button>
         </div>
 
-        <div class="meeting">        
+        <div class="meeting">  
+            <form action="DECIDE WHAT TO DO HERE" method="POST">
             <label for="where">Title</label>
             <input type="text" name="when" id="when" class="text ui-widget-content ui-corner-all" />
 
@@ -392,10 +393,12 @@
                 <option value="2">2 weeks</option>
                 <option value="3">3 weeks</option>
             </select>
+            <input type="submit" class="btnLogin" value="Schedule!" tabindex="4">
+            </form>
         </div>
 
         <div id="dialog-form">
-
+            <form action="DECIDE WHAT TO DO HERE" method="POST">
             <label for="where">Title</label>
             <input type="text" name="when" id="when" class="text ui-widget-content ui-corner-all" />
 
@@ -424,8 +427,11 @@
                 <option value="2">2 weeks</option>
                 <option value="3">3 weeks</option>
             </select>
-
-        </div>    
+            <input type="submit" class="btnLogin" value="Schedule!" tabindex="4">
+            </form>
+        </div>   
+        
+        
         <footer id="main">
             <a href="/">@ TimeFinder Corp. 2012</a>
         </footer>

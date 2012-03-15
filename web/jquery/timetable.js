@@ -12,9 +12,9 @@
 
 		$( "#dialog-form" ).dialog({
 			autoOpen: false,
-			height: 430,
+			height: 440,
 			width: 350,
-			modal: true,
+			modal: true /*,
 			buttons: {
 				"Schedule!": function() {
 					var bValid = true;
@@ -35,7 +35,7 @@
 			},
 			close: function() {
 				allFields.val( "" ).removeClass( "ui-state-error" );
-			}
+			}*/
 		});
 
 		$("#formOption").dialog({
@@ -49,7 +49,12 @@
                         autoOpen: false,
 			height: 300,
 			width: 350,
-			modal: true,
+			modal: true 
+                        
+                        /*,
+                         *
+                         * Liz , I have commented this out to remove the buttons in the form.
+                         *
                         buttons: {
                                         "Schedule!": function() {
                                                 var bValid = true;
@@ -70,7 +75,7 @@
                                 
 			close: function() {
 				allFields.val( "" ).removeClass( "ui-state-error" );
-			}
+			}*/
                 })
 
 		$( ".selection" ).click(function() {
