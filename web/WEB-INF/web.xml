@@ -91,7 +91,10 @@
         <servlet-name>Contact</servlet-name>
         <servlet-class>classes.Contact</servlet-class>
     </servlet>
-    <servlet-mapping>
+    <servlet>
+        <servlet-name>SuperUser</servlet-name>
+        <jsp-file>/jsp/superUser.jsp</jsp-file>
+    </servlet><servlet-mapping>
         <servlet-name>Index</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
@@ -162,6 +165,10 @@
     <servlet-mapping>
         <servlet-name>Contact</servlet-name>
         <url-pattern>/Contact</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SuperUser</servlet-name>
+        <url-pattern>/superUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>5</session-timeout>

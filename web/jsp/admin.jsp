@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <title>TimeFinder - Admin</title>
         <link rel="stylesheet" href="<c:out value="${pageContext.servletContext.contextPath}"/>/css/sec_style.css">
-        <link rel="stylesheet" href="<c:out value="${pageContext.servletContext.contextPath}"/>/jquery/development-bundle/themes/base/jquery.ui.all.css">
         <link rel="stylesheet" href="<c:out value="${pageContext.servletContext.contextPath}"/>/css/menu.css" type="text/css" media="screen" />
         <link rel="stylesheet" type="text/css" href="<c:out value="${pageContext.servletContext.contextPath}"/>/css/login_structure.css">
 
@@ -138,10 +137,8 @@
                     <div class="dropdown_2columns align_right"><!-- Begin right aligned container -->
                         <div class="col_2 firstcolumn">
                             <h2>Contact Us</h2>
-                            <form action="post"><!-- Begin contact form -->
+                            <form action="Contact" method="POST"><!-- Begin contact form -->
                                 <fieldset>
-                                    <p><label>Name</label><input type="text" size="30" /></p>
-                                    <p><label>Email</label><input type="text" size="30" /></p>
                                     <p><label>Subject</label><input type="text" size="30" /></p>
                                     <p><label>Message</label><textarea cols="30" rows="10"></textarea></p>		
                                     <button type="submit" class="submit">Send</button>
@@ -163,6 +160,18 @@
                 </li><!-- End Contact Item -->
             </ul><!-- END MENU -->
         </div><!-- END MENU WRAPPER -->
+        
+        <div  class="box admin">
+            <div class="boxBody">
+                <h1 class="alignCenter">Admin panel</h1>
+            </div>
+            <p class="marginTop" >Thank you for registering with our service!</p>
+            <p class="alignCenter" >A confirmation email has been sent to your account with your details</p>
+            <p class="alignCenter" >You will now be redirected to our login page </p>
+        </div>
+        
+        
+        
         <footer id="main">
             <a href="<c:out value="${pageContext.servletContext.contextPath}"/>">@ TimeFinder Corp. 2012</a>
         </footer>

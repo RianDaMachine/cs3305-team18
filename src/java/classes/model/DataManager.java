@@ -2,10 +2,9 @@ package classes.model;
 
 import classes.beans.UserBean;
 import java.sql.*;
-import java.util.Hashtable;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.Random;
 
 /*
  * Javabean with database operation methods
@@ -28,7 +27,7 @@ public class DataManager {
     public String getDbURL() {
         return dbURL;
     }
-    
+
     public String getNotVerified() {
         return this.notVerified;
     }
@@ -63,7 +62,7 @@ public class DataManager {
             conn = DriverManager.getConnection(getDbURL(), getDbUserName(),
                     getDbPassword());
         } catch (SQLException e) {
-            logger.log(Level.SEVERE, "Unable to connect to DB!");
+            logger.log(Level.SEVERE, "Connection error @ DataManager.getConnection");
         }
         return conn;
     }
@@ -150,6 +149,7 @@ public class DataManager {
     }
 
     // End of getters / setters 
+    
     public String MD5(String md5) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
@@ -175,11 +175,11 @@ public class DataManager {
 
             try {
                 String strQuery = " UPDATE users "
-                                + " SET password = '" + md5 + "'"
-                                + " WHERE users.uid = '"+ uid + "';";
+                        + " SET password = '" + md5 + "'"
+                        + " WHERE users.uid = '" + uid + "';";
                 stmt = conn.createStatement();
                 int row = stmt.executeUpdate(strQuery);
-                
+
             } catch (SQLException ex) {
                 ex.printStackTrace();
             } finally {
@@ -325,6 +325,7 @@ public class DataManager {
                 rs = stmt.executeQuery(strQuery);
 
                 if (!rs.next()) {
+                    //is not valid
                     System.out.println("uid is INVALID! @ DATAMANAGER");
                     isValid = false;
                 } else {
@@ -337,13 +338,15 @@ public class DataManager {
                             notVerified = "You have not been verified by the system admin";
                             verified = false;
                         }
-                    }else {
-                        System.out.println("Here as EXPECTED");
+                    } else if (getUserGroupName(userName, "student").equals("student")) {
                         // is a student
+                        System.out.println("Here as EXPECTED");
                         verified = true;
-                    }
+                    } /*
+                     *  else is the superUser account , must implement this.
+                     * 
+                     */
                 }
-
             } catch (SQLException ex) {
                 logger.log(Level.WARNING, "SQL checkUid error!");
             } finally {
