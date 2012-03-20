@@ -34,18 +34,18 @@ $(function() {
         modal: true
     });
     
-    // EDITING REMOVING
+    // EDITING
     $(".editForm").dialog({
         autoOpen: false,
-        height: 100,
+        height: 200,
         width: 200,
         modal: true
     });
     
-    // EDITING REMOVING
+    // REMOVING
     $(".removeForm").dialog({
         autoOpen: false,
-        height: 100,
+        height: 200,
         width: 200,
         modal: true
     });

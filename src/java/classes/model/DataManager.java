@@ -542,13 +542,13 @@ public class DataManager {
                 rs = stmt.executeQuery(strQuery);
 
                 while (rs.next()) {
-   
-                    String dayStr = Integer.toString( rs.getInt("day") );
-                    String timeStr = Integer.toString( rs.getInt("time") );
-                    
+
+                    String dayStr = Integer.toString(rs.getInt("day"));
+                    String timeStr = Integer.toString(rs.getInt("time"));
+
                     info[0] = rs.getString("title");
                     info[1] = rs.getString("note");
-                    info[2] =  dayStr;
+                    info[2] = dayStr;
                     info[3] = timeStr;
                 }
 
@@ -563,7 +563,44 @@ public class DataManager {
                 putConnection(conn);
             }
         }
-        
+
         return info;
+    }
+
+    public void removeEvent( String uid , int day , int time) {
+        Connection conn = getConnection();
+
+        if (conn != null) {
+            Statement stmt = null;
+            ResultSet rs = null;
+
+            try {
+                
+                //SELECT muid
+                //FROM  schedules
+                //WHERE schedules.day = 4 AND schedules.time = 5;
+                
+                String strQuery = "";
+                
+                //DELETE FROM meetinglist 
+                //WHERE meetinglist.muid = VAR;
+
+
+               //DELETE FROM schedules
+                //WHERE schedules.muid =  VAR;
+
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(strQuery);
+            } catch (SQLException ex) {
+                logger.log(Level.WARNING, "SQL removeEvent error!");
+            } finally {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    logger.log(Level.WARNING, "Could not close the Statement variable!");
+                }
+                putConnection(conn);
+            }
+        }
     }
 }
