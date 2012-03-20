@@ -33,11 +33,27 @@ $(function() {
         width: 200,
         modal: true
     });
+    
+    // EDITING REMOVING
+    $(".editForm").dialog({
+        autoOpen: false,
+        height: 100,
+        width: 200,
+        modal: true
+    });
+    
+    // EDITING REMOVING
+    $(".removeForm").dialog({
+        autoOpen: false,
+        height: 100,
+        width: 200,
+        modal: true
+    });
                 
     //PERSONAL
     $(".meeting").dialog({
         autoOpen: false,
-        height: 300,
+        height: 350,
         width: 350,
         modal: true 
     })
@@ -68,33 +84,31 @@ $(function() {
                 $("#dialog-form").dialog("open");
             }
         });	
-     }); 
+    }); 
         
-        $( ".occupied" ).click(function() {
-            $( "#editRemove").dialog("open");
-            //edit
-            var editClick = false;
-            //remove
-            var removeClick = false;
+    $( ".occupied" ).click(function() {
+        $( "#editRemove").dialog("open");
+        //edit
+        var editClick = false;
+        //remove
+        var removeClick = false;
             
-            //editing
-            $(".edit").click(function(){	
-                editClick = true;
-                if(editClick){
-                                      
-                    $( "#editRemove" ).dialog( "open" ); 
-                }
-            });
-                            
-            //removing
-            $(".remove").click(function(){	
-                removeClick = true;
-                if(removeClick){
-                                      
-                // ADD FORM FOR REMOVING
-                //$( ".meeting" ).dialog( "open" ); 
-                }
-            });
+        //editing
+        $(".edit").click(function(){	
+            editClick = true;
+            if(editClick){                    
+                $( ".editForm" ).dialog( "open" ); 
+            }
         });
+                            
+        //removing
+        $(".remove").click(function(){	
+            removeClick = true;
+            if(removeClick){
+                                      
+            $( ".removeForm" ).dialog( "open" ); 
+            }
+        });
+    });
 });
 

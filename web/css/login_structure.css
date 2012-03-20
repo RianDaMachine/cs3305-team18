@@ -30,6 +30,16 @@ body{
     overflow:hidden;
 }
 
+.occupied {
+    background-color : #F97C7C;
+}
+
+.occupied p {
+  margin : 0;
+  padding : 0;
+  font-size : 0.8em;
+}
+
 .box.help
 {
     height:400px;
@@ -84,6 +94,11 @@ body{
     margin:-130px 0 0 -166px;
 }
 
+.scheduleInfo {
+    float : right;
+    margin-top : 20px;
+}
+
 .boxBody
 {
     background:#fefefe;
@@ -112,7 +127,7 @@ body{
 }
 .box footer input[type=checkbox]{
     vertical-align:sub;
-    *vertical-align:middle;
+    vertical-align:middle;
     margin-right:10px;
 }
 .box input[type=text],

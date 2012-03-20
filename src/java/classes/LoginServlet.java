@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         System.out.println("\n\n\n");
+        System.out.println("\n\n\n");
         System.out.println("DEBUGGING STARTS HERE \n");
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
@@ -59,6 +59,8 @@ public class LoginServlet extends HttpServlet {
             
             session.setAttribute("userBean", userBean);
             session.setAttribute("uid", userBean.getUid());
+            
+            System.out.print( "Uid is this mofucka : " + userBean.getUid() + "\n\n" );
             
             System.out.println("LOGINURL = " + loginURL );
             //RequestDispatcher dispatcher = request.getRequestDispatcher( loginURL );

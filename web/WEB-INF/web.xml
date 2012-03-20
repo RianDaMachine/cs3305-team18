@@ -99,6 +99,10 @@
         <servlet-name>SoloScheduleServlet</servlet-name>
         <servlet-class>classes.SoloScheduleServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditRemoveServlet</servlet-name>
+        <servlet-class>classes.EditRemoveServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Index</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -178,6 +182,10 @@
     <servlet-mapping>
         <servlet-name>SoloScheduleServlet</servlet-name>
         <url-pattern>/soloServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditRemoveServlet</servlet-name>
+        <url-pattern>/editRemove</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>5</session-timeout>

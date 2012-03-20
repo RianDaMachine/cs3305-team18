@@ -149,7 +149,6 @@ public class DataManager {
     }
 
     // End of getters / setters 
-    
     public String MD5(String md5) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
@@ -343,8 +342,8 @@ public class DataManager {
                         System.out.println("Here as EXPECTED");
                         verified = true;
                     } /*
-                     *  else is the superUser account , must implement this.
-                     * 
+                     * else is the superUser account , must implement this.
+                     *
                      */
                 }
             } catch (SQLException ex) {
@@ -384,8 +383,12 @@ public class DataManager {
                 stmt = conn.createStatement();
                 rs = stmt.executeQuery(strQuery);
 
+                System.out.println("Here\n");
+
+
                 while (rs.next()) {
                     userBean.setUid(rs.getString("uid"));
+                    System.out.println("\nNot Here\n");
                     userBean.setFirstName(rs.getString("fName"));
                     userBean.setLastName(rs.getString("lName"));
                     userBean.setEmail(rs.getString("email"));
@@ -492,5 +495,75 @@ public class DataManager {
             }
         }
         return bean;
+    }
+
+    public void insertSoloSchedule(int uid, int muid, String title, int duration, String comments,
+            int recurring, int time, int day, int week) {
+        Connection conn = getConnection();
+        if (conn != null) {
+            Statement stmt = null;
+
+            try {
+                String strMeetingList = " INSERT INTO meetinglist"
+                        + " VALUES (" + uid + " ," + muid + " )";
+
+                String strSoloSched = " INSERT INTO schedules(uid , week , day , time , note , title , muid) "
+                        + " VALUES (" + uid + " , " + week + " , "
+                        + day + " , " + time + " , ' " + comments + " ' , ' " + title + " ' , " + muid + " )";
+
+                stmt = conn.createStatement();
+                int one = stmt.executeUpdate(strMeetingList);
+                int two = stmt.executeUpdate(strSoloSched);
+
+            } catch (SQLException ex) {
+                logger.log(Level.WARNING, "SQL insertSoloSchedule error!");
+            } finally {
+                putConnection(conn);
+            }
+        }
+    }
+
+    public String[] getSlot(String uid, int day, int time) {
+        String[] info = new String[4];
+
+        Connection conn = getConnection();
+
+        if (conn != null) {
+            Statement stmt = null;
+            ResultSet rs = null;
+
+            try {
+                String strQuery = " SELECT DISTINCT day , time , title , note "
+                        + " FROM schedules , meetinglist "
+                        + " WHERE meetinglist.uid = " + uid + " AND " + uid + " = schedules.uid"
+                        + " AND time = " + time + " AND day = " + day + ";";
+
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(strQuery);
+
+                while (rs.next()) {
+   
+                    String dayStr = Integer.toString( rs.getInt("day") );
+                    String timeStr = Integer.toString( rs.getInt("time") );
+                    
+                    info[0] = rs.getString("title");
+                    info[1] = rs.getString("note");
+                    info[2] =  dayStr;
+                    info[3] = timeStr;
+                }
+
+            } catch (SQLException ex) {
+                logger.log(Level.WARNING, "SQL getSlot error!");
+            } finally {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    logger.log(Level.WARNING, "Could not close the Statement variable!");
+                }
+                putConnection(conn);
+            }
+        }
+        
+        return info;
     }
 }

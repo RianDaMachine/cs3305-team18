@@ -1,4 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="classes.beans.UserBean"%>
+<%@page import="classes.SoloScheduleServlet"%>
+<% UserBean userBean = (UserBean) session.getAttribute("userBean");%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,6 +30,10 @@
         <link rel="stylesheet" href="<c:out value="${pageContext.servletContext.contextPath}"/>/jquery/development-bundle/demos/demos.css">
         <script src="<c:out value="${pageContext.servletContext.contextPath}"/>/jquery/timetable.js"></script>
         <script src="<c:out value="${pageContext.servletContext.contextPath}"/>/jquery/tumblrtags.js"></script>
+        
+        <%  SoloScheduleServlet sched = new SoloScheduleServlet(); 
+            String[] info = new String[4];
+        %>
 
 
         <script type="text/javascript" charset="utf-8">
@@ -201,6 +208,18 @@
                     <th></th>
                     <th></th>
                     <th></th>
+                    <th>March </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <!-- MONTH , DATE , SCROLL BARS , DIFFERENT VIEWS -->
+                    <th></th>
+                    <th></th>
+                    <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -209,19 +228,19 @@
                 </tr>
                 <tr>
                     <th>GMT+0 </th>
-                    <th>Monday <!-- DYNAMIC DATE --> </th>
-                    <th>Tuesday 
-                    <th>Wednesday </th>
-                    <th>Thursday  </th>
-                    <th>Friday  </th>
-                    <th>Saturday  </th>
-                    <th>Sunday  </th>
+                    <th>Monday 19th </th>
+                    <th>Tuesday 20th</th>
+                    <th>Wednesday 21rst</th>
+                    <th>Thursday  22nd</th>
+                    <th>Friday  23rd</th>
+                    <th>Saturday  24th</th>
+                    <th>Sunday  25th</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th>08.00</th>
-                    <td class="selection"></td>
+                    <td class="selection"> </td>
                     <td class="selection"></td>
                     <td class="selection"></td>
                     <td class="selection"></td>
@@ -276,7 +295,14 @@
                     <td class="selection"></td>
                     <td class="selection"></td>
                     <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if(sched.testSlot( userBean.getUid() , 4 , 5)){%> class="occupied" <%}else{%> class="selection" <%}%> >
+                        <% if( sched.checkSlot( userBean.getUid() , 4 , 5) ) {
+                            info = sched.getInfo();
+                            out.println( "<p>Title : " + info[0] + "</p>");
+                            out.println( "<p>Note : " + info[1] + "</p>");
+                           }
+                        %> 
+                    </td>
                     <td class="selection"></td>
                     <td class="selection"></td>
                     <td class="selection"></td>
@@ -365,126 +391,176 @@
         </table>
 
     </div>
-
-
-
+    
     <div class="demo">
 
-       <div id="editRemove" title="Choose Type">
+        <div id="editRemove" title="Choose Type">
             <button class="edit">Edit?</button>
             <button class="remove">Remove?</button>
-       </div> 
+        </div> 
+
+        <div class="removeForm">  
+            <form action="editRemove" method="POST">
+                <div class="scheduleInfo">
+                    <input type="submit" class="btnLogin" value="Remove" tabindex="4">
+                    <input type="hidden" name="remove" value="remove">
+                </div>
+            </form>
+        </div>
+        
+        <div class="editForm">  
+            <form action="editRemove" method="POST">
+                <div class="scheduleInfo">
+                    <input type="submit" class="btnLogin" value="Edit" tabindex="4">
+                    <input type="hidden" name="edit" value="edit">
+                </div>
+            </form>
+        </div>
         
         
+        
+
         <div id="formOption" title="Choose Type">
             <button class="groupForm">Group / Several</button>
             <button class="self">Personal</button>
         </div>
 
-         <!-- PERSONAL -->
+        <!-- PERSONAL -->
         <div class="meeting">  
             <form action="soloServlet" method="POST">
-            <label for="where">Title</label>
-            <input type="text" name="title" id="when" class="text ui-widget-content ui-corner-all" required/>
+                <label for="where">Title</label>
+                <input type="text" name="title" id="when" class="text ui-widget-content ui-corner-all" required/>
+               
+                <label for="when">Duration</label>
+                <label for="when">(Determined in hours)</label>
+                <select name="duration" >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                    <option value="3">7</option>
+                    <option value="3">8</option>
+                    <option value="3">9</option>
+                    <option value="3">10</option>
+                </select>
 
-            <label for="when">Duration</label>
-            <label for="when">(Determined in hours)</label>
-            <select name="duration" >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="3">4</option>
-                <option value="3">5</option>
-                <option value="3">6</option>
-                <option value="3">7</option>
-                <option value="3">8</option>
-                <option value="3">9</option>
-                <option value="3">10</option>
-            </select>
+                <label for="Comments">Comments</label>
+                <input type="text" name="comments" id="comments" class="text ui-widget-content ui-corner-all" />
+                
+                <input type="hidden" name="uid" value="<%= userBean.getUid() %>"/>
+                
+                <label for="when">Will this be a recurring event ?</label>
+                <label for="when">(Determined in weeks)</label>
+                <select name="recurring" >
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
 
-            <label for="Comments">Comments</label>
-            <input type="text" name="comments" id="comments" class="text ui-widget-content ui-corner-all" />
+                <!-- Jscript no ready yet ,here is vanilla solution -->
+                <label for="when">Time</label>
+                <select name="time" >
+                    <option value="0">08.00</option>
+                    <option value="1">09.00</option>
+                    <option value="2">10.00</option>
+                    <option value="3">11.00</option>
+                    <option value="4">12.00</option>
+                    <option value="5">13.00</option>
+                    <option value="6">14.00</option>
+                    <option value="7">15.00</option>
+                    <option value="8">16.00</option>
+                    <option value="9">17.00</option>
+                    <option value="10">18.00</option>
+                    <option value="11">19.00</option>
+                    <option value="12">20.00</option>
+                    <option value="13">21.00</option>
+                </select>
 
-            <label for="when">Will this be a recurring event ?</label>
-            <label for="when">(Determined in weeks)</label>
-            <select name="recurring" >
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="3">4</option>
-                <option value="3">5</option>
-                <option value="3">6</option>
-                <option value="3">7</option>
-                <option value="3">8</option>
-                <option value="3">9</option>
-                <option value="3">10</option>
-            </select>
-            <div class="scheduleInfo">
-                <input type="submit" class="btnLogin" value="Schedule!" tabindex="4">
-            </div>
+                <!-- Jscript no ready yet ,here is vanilla solution -->
+                <label for="when">Day</label>
+                <select name="day" >
+                    <option value="0">Sun</option>
+                    <option value="1">Mon</option>
+                    <option value="2">Tue</option>
+                    <option value="3">Wed</option>
+                    <option value="4">Thurs</option>
+                    <option value="5">Fri</option>
+                    <option value="6">Sat</option>
+                </select>
+                <div class="scheduleInfo">
+                    <input type="submit" class="btnLogin" value="Schedule!" tabindex="4">
+                </div>
             </form>
         </div>
 
-        
-         <!-- GROUP / SEVERAL -->
-         <div id="dialog-form">
+        <!-- GROUP / SEVERAL -->
+        <div id="dialog-form">
             <form action="DECIDE WHAT TO DO HERE" method="POST">
-            <label for="where">Title</label>
-            <input type="text" name="when" id="when" class="text ui-widget-content ui-corner-all" />
+                <label for="where">Title</label>
+                <input type="text" name="when" id="when" class="text ui-widget-content ui-corner-all" />
 
-            <label for="when">Duration</label>
-            <label for="when">(Determined in hours)</label>
-            <select>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="3">4</option>
-                <option value="3">5</option>
-                <option value="3">6</option>
-                <option value="3">7</option>
-                <option value="3">8</option>
-                <option value="3">9</option>
-                <option value="3">10</option>
-            </select>
+                <label for="when">Duration</label>
+                <label for="when">(Determined in hours)</label>
+                <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                    <option value="3">7</option>
+                    <option value="3">8</option>
+                    <option value="3">9</option>
+                    <option value="3">10</option>
+                </select>
 
-            <label for="where">Choose a group?</label>
-            <input type="text" name="when" id="when" class="text ui-widget-content ui-corner-all" />
+                <label for="where">Choose a group?</label>
+                <input type="text" name="when" id="when" class="text ui-widget-content ui-corner-all" />
 
-            <label for="when">Choose an individual?</label>
-            <input type="text" name="where" id="where" class="text ui-widget-content ui-corner-all" />
+                <label for="when">Choose an individual?</label>
+                <input type="text" name="where" id="where" class="text ui-widget-content ui-corner-all" />
 
-            <div class="tag-editor">
-                <label for="attending">Attending</label>
-                <p>Will show who is attending here...</p>
+                <div class="tag-editor">
+                    <label for="attending">Attending</label>
+                    <p>Will show who is attending here...</p>
 
-                <div class="tags-container">
-                    <input type="text" name="attending" id="attending" class="text ui-widget-content ui-corner-all"/>
-                    <div class="visualClear"><!-- clear floats --></div>
+                    <div class="tags-container">
+                        <input type="text" name="attending" id="attending" class="text ui-widget-content ui-corner-all"/>
+                        <div class="visualClear"><!-- clear floats --></div>
+                    </div>
                 </div>
-            </div>
-            <label for="when">Will this be a recurring event ?</label>
-            <label for="when">(Determined in weeks)</label>
-            <select>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="3">4</option>
-                <option value="3">5</option>
-                <option value="3">6</option>
-                <option value="3">7</option>
-                <option value="3">8</option>
-                <option value="3">9</option>
-                <option value="3">10</option>
-            </select>
-            <div class="scheduleInfo">
-                <input type="submit" class="btnLogin" value="Schedule!" tabindex="4">
-            </div>
+                <label for="when">Will this be a recurring event ?</label>
+                <label for="when">(Determined in weeks)</label>
+                <select>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                    <option value="3">7</option>
+                    <option value="3">8</option>
+                    <option value="3">9</option>
+                    <option value="3">10</option>
+                </select>
+                <div class="scheduleInfo">
+                    <input type="submit" class="btnLogin" value="Schedule!" tabindex="4">
+                </div>
             </form>
         </div>   
-        
-        
+
+
         <footer id="main">
             <a href="/">@ TimeFinder Corp. 2012</a>
         </footer>
