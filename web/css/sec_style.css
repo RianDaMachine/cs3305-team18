@@ -12,11 +12,6 @@ body{
     width: 700px;
 }
 
-#firstDrop{
-    text-align: center;
-    font-size: 1.1em;
-}
-
 #answer{
     font-size: 10px;
     margin-left: 550px;
@@ -219,3 +214,189 @@ attending label {
 .box.login li {
     display : block;
 }
+
+
+/*_________________________________________ 
+
+                NAVIGATION
+____________________________________________*/
+
+
+#wrapper_menu {
+	width: 980px;
+	margin:0 auto;
+	display:block;
+	position: relative;
+	z-index:9999;
+}
+.menu {
+    background-color: black;
+	list-style:none;
+	width:940px;
+	margin:30px auto 0px auto;
+	height:43px;
+	padding:0px 20px 0px 20px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.menu li {
+	float:left;
+	text-align:center;
+	position:relative;
+	margin-right:20px;
+	margin-top:6px;
+	border:none;
+}
+
+.menu li:hover {
+	background:#eeeeee;
+	border:1px solid #444444;
+	border-bottom:none;
+	margin-right:19px;
+	background: -moz-linear-gradient(top, #F4F4F4, #EEEEEE);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F4F4F4), to(#EEEEEE));
+	background: -o-linear-gradient(top, #F4F4F4, #EEEEEE);
+	-moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -khtml-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.menu li a {
+	color: #EEEEEE;
+	outline:0;
+	padding: 5px 10px 3px 10px;
+	text-decoration:none;
+	display:block;
+	text-shadow: 1px 1px 1px #000;
+        font-size: 15px;
+}
+.menu li:hover a {
+	color:#161616;
+	text-shadow: none;
+	position:relative;
+	z-index:11;
+	border-bottom:1px solid #EEEEEE;
+	padding: 4px 9px 4px 9px;
+}
+.menu li:hover div a {
+	display:inline;
+}
+
+/* Right aligned menu item */
+
+.menu .right {
+	float:right;
+	right:0;
+	margin-right:0px;
+}
+.menu li.right:hover {
+	margin-right:-1px;
+}
+
+
+
+/*  _______________________________________
+
+	02 DROP DOWN MENU
+    _______________________________________  */
+
+
+
+/* Left & right aligned common styles */
+ 
+.menu .dropdown_2columns, 
+.menu .dropdown_fullwidth {
+	margin:4px auto;
+	left:-999em;
+	position:absolute;
+	background:#eeeeee;
+	border:1px solid #444444;
+	padding:10px;
+	text-align:left;
+	-moz-border-radius: 0px 5px 5px 5px;
+    -webkit-border-radius: 0px 5px 5px 5px;
+    -khtml-border-radius: 0px 5px 5px 5px;
+    border-radius: 0px 5px 5px 5px;
+	background: -moz-linear-gradient(top, #EEEEEE, #BBBBBB);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEEEEE), to(#BBBBBB));
+	background: -o-linear-gradient(top, #EEEEEE, #BBBBBB);
+}
+
+
+
+/* Showing Drop Down on Mouse Hover - Right aligned */
+
+.menu li .align_right {
+	/* Rounded Corners */
+	-moz-border-radius: 5px 0px 5px 5px;
+    -webkit-border-radius: 5px 0px 5px 5px;
+    border-radius: 5px 0px 5px 5px;
+}
+.menu li:hover .align_right {
+	left:auto;
+	right:-1px;
+	top:25px;
+}
+.menu li.right:hover .dropdown_fullwidth {
+	right:18px;
+	top:33px;
+}
+
+.menu li:hover div a {
+	text-decoration:none;
+	text-shadow:none;
+	border:none;
+	padding:0;
+}
+
+/*  _______________________________________
+
+	 CONTACT FORM
+    _______________________________________  */
+
+
+
+.menu form {
+	margin:0 0 15px 0;
+	padding:0px;
+}
+
+/* Labels & fieldsets stylings */
+
+.menu fieldset {
+	margin:0;
+	border:none;
+}		
+.menu form p {
+	margin:10px 0;
+	overflow:hidden;
+	width:270px;
+}
+
+.menu label {
+	float:left;
+	display:block;
+	text-align:left;
+	width:50px;
+}	
+.menu input,
+.menu textarea {	
+	margin:0;	
+	width:170px;
+	float:right;
+	color:#eeeeee;	
+	background-color:#222222;
+	border:1px solid #0A0A0A;
+	padding:3px 5px 3px 5px;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}		
+.menu textarea {
+	height:100px;
+	overflow:auto;
+}					
+
