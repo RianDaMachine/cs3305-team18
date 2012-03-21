@@ -1,3 +1,8 @@
+/*
+ * Author : lwm1
+ * Student Number : 109765255
+ */
+
 package classes;
 
 import classes.model.PostMail;
@@ -5,11 +10,14 @@ import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
-
+import java.util.logging.*;
 
 import classes.beans.UserBean;
 import classes.model.*;
 
+
+
+// reset passwords , sends email 
 public class ForgotPassword extends HttpServlet {
 
     private String from = "reg.time.finder@gmail.com";
@@ -17,13 +25,15 @@ public class ForgotPassword extends HttpServlet {
     private String mailPass = "adminReg99";
     DataManager dataManager = new DataManager();
     PostMail pMail = new PostMail();
+    private static final Logger logger = Logger.getLogger(ForgotPassword.class.getName());
 
     @Override
+    //Initialise servlet parameters for connecting to DataManager class
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
         dataManager = new DataManager();
 
-        // Will have to use web.xml to define these when we deploy .WAR
+        // Better to get Strings from XML config
         dataManager.setDbURL("jdbc:mysql://localhost/2012_roc1");
         dataManager.setDbUserName("root");
         dataManager.setDbPassword("password");
@@ -31,14 +41,15 @@ public class ForgotPassword extends HttpServlet {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (Exception ex) {
             System.out.println("Initialize connector string");
-            ex.printStackTrace();
+            logger.log(Level.SEVERE, "Cannot Connect to DB @ ForgotPassword init method!");
         }
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
-
         UserBean bean = dataManager.getDetailsFromEmail(email);
+        
+        //send mail
         pMail.postMail(this.from, email,
                 "TimeFinder Email life saver!",
                 "Don't worry , TimeFinder is always here to help ;)\n\n"
@@ -49,9 +60,10 @@ public class ForgotPassword extends HttpServlet {
                 + "You might want to change your password now...",
                 mailUser,
                 mailPass);
+        
+        //safe redirect?
         HttpSession session = request.getSession(true);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/resetSuccess");
         dispatcher.forward(request, response);
-
     }
 }

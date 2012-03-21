@@ -1,19 +1,21 @@
+/*
+ * Author : lwm1
+ * Student Number : 109765255
+ */
+
 package classes;
 
-import classes.model.PostMail;
-import classes.beans.UserBean;
-import classes.model.DataManager;
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
+import classes.model.*;
+import classes.beans.UserBean;
 
+/*
+ * Called when sending FAQ/Help email from main menu
+ */
 public class Contact {
-    
-    
     private String from = "reg.time.finder@gmail.com";
     private String mailUser = "reg.time.finder";
     private String mailPass = "adminReg99";
