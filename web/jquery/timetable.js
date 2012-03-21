@@ -1,6 +1,6 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/*
+ * Author : Liz Hayes
+ * CoAuthor : Luke Murphy
  */
 
 $(function() {
@@ -10,60 +10,59 @@ $(function() {
     allFields = $( [] ).add( where ).add( when ).add( attending );
 
 
-//<<<<<<< .mine
-		$( "#dialog-form" ).dialog({
-			autoOpen: false,
-			height: 430,
-			width: 350,
-			modal: true,
-			buttons: {
-				"Create": function() {
-					var bValid = true;
-					allFields.removeClass( "ui-state-error" );
+    $( "#dialog-form" ).dialog({
+        autoOpen: false,
+        height: 430,
+        width: 350,
+        modal: true,
+        buttons: {
+            "Create": function() {
+                var bValid = true;
+                allFields.removeClass( "ui-state-error" );
 
-    //INITIAL GROUP/INDIVIDUAL OPTION
+                //INITIAL GROUP/INDIVIDUAL OPTION
+                $("#formOption").dialog({
+                    autoOpen: false,
+                    height: 100,
+                    width: 200,
+                    modal: true
+                });
+                
+                // GROUP / SEVERAL // INDIVIDUAL
+                $( "#dialog-form" ).dialog({
+                    autoOpen: false,
+                    height: 440,
+                    width: 350,
+                    modal: true 
+                });
+                //>>>>>>> .r21
+                //
+                //<<<<<<< .mine
+                if ( bValid ) {
+                    var meeting = where.val() + " " + when.val() + " " + attending.val();
+                    $( "#table tbody" ).append( "<tr>" +
+                        "<td class=\"selectrion\">" + meeting + "</td>" 
+                        + "</tr>" );
+                    document.getElementById(id).style.backgroundColor();
+                                                    
+                    $( this ).dialog( "close" );
+                }
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            }
+        },
+        close: function() {
+            allFields.val( "" ).removeClass( "ui-state-error" );
+        }
+    });
+
     $("#formOption").dialog({
         autoOpen: false,
         height: 100,
         width: 200,
         modal: true
     });
-                
-    // GROUP / SEVERAL // INDIVIDUAL
-    $( "#dialog-form" ).dialog({
-        autoOpen: false,
-        height: 440,
-        width: 350,
-        modal: true 
-    });
-//>>>>>>> .r21
-//
-//<<<<<<< .mine
-					if ( bValid ) {
-                                                var meeting = where.val() + " " + when.val() + " " + attending.val();
-						$( "#table tbody" ).append( "<tr>" +
-							"<td class=\"selectrion\">" + meeting + "</td>" 
-                                                        + "</tr>" );
-                                                document.getElementById(id).style.backgroundColor();
-                                                    
-						$( this ).dialog( "close" );
-					}
-				},
-				Cancel: function() {
-					$( this ).dialog( "close" );
-				}
-			},
-			close: function() {
-				allFields.val( "" ).removeClass( "ui-state-error" );
-			}
-		});
-
-		$("#formOption").dialog({
-                        autoOpen: false,
-			height: 100,
-			width: 200,
-			modal: true
-                });
     // EDITING REMOVING
     $("#editRemove").dialog({
         autoOpen: false,
@@ -144,7 +143,7 @@ $(function() {
             removeClick = true;
             if(removeClick){
                                       
-            $( ".removeForm" ).dialog( "open" ); 
+                $( ".removeForm" ).dialog( "open" ); 
             }
         });
     });
