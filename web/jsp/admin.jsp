@@ -40,7 +40,19 @@
             <table>
                 <tr><td> Groups </td></tr>
             </table>
-            
+            <table>
+                <tr><td> You are admin of the following </td>
+                    <td> Remove user from group </td>
+                    <td> Email group </td>
+                    <td> Edit group timetable</td>
+                </tr>
+            </table>
+            <table>
+                <tr><td> Create a group </td></tr>
+            </table>
+            <table>
+                <tr><td> Join group </td></tr>
+            </table>
             
             
             

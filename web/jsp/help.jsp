@@ -37,9 +37,7 @@
             <div class="boxBody">
                 <h1 class="alignCenter">Help/FAQ panel</h1>
             </div>
-            <p class="marginTop" >Thank you for registering with our service!</p>
-            <p class="alignCenter" >A confirmation email has been sent to your account with your details</p>
-            <p class="alignCenter" >You will now be redirected to our login page </p>
+            <p class="marginTop" >FAQ section coming...</p>
         </div>
         
         
