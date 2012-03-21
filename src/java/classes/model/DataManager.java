@@ -508,14 +508,15 @@ public class DataManager {
                 String strMeetingList = " INSERT INTO meetinglist"
                         + " VALUES (" + uid + " ," + muid + " )";
 
-                String strSoloSched = " INSERT INTO schedules(uid , week , day , time , note , title , muid) "
-                        + " VALUES (" + uid + " , " + week + " , "
-                        + day + " , " + time + " , ' " + comments + " ' , ' " + title + " ' , " + muid + " )";
-
                 stmt = conn.createStatement();
                 int one = stmt.executeUpdate(strMeetingList);
-                int two = stmt.executeUpdate(strSoloSched);
-
+                //duration
+                for ( int i = 0; i < duration ; i++) {
+                    String strSoloSched = " INSERT INTO schedules(uid , week , day , time , note , title , muid) "
+                            + " VALUES (" + uid + " , " + week + " , "
+                            + day + " , " + (time + i) + " , ' " + comments + " ' , ' " + title + " ' , " + muid + " )";
+                    int two = stmt.executeUpdate(strSoloSched);
+                }
             } catch (SQLException ex) {
                 logger.log(Level.WARNING, "SQL insertSoloSchedule error!");
             } finally {
@@ -654,7 +655,7 @@ public class DataManager {
         return lecturers;
     }
 
-    public void validateLecturer( int uid ) {
+    public void validateLecturer(int uid) {
         Connection conn = getConnection();
 
         if (conn != null) {

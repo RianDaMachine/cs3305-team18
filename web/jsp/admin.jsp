@@ -37,13 +37,14 @@
             <div class="boxBody">
                 <h1 class="alignCenter">Admin panel</h1>
             </div>
-            <p class="marginTop" >Thank you for registering with our service!</p>
-            <p class="alignCenter" >A confirmation email has been sent to your account with your details</p>
-            <p class="alignCenter" >You will now be redirected to our login page </p>
+            <table>
+                <tr><td> Groups </td></tr>
+            </table>
+            
+            
+            
+            
         </div>
-        
-        
-        
         <footer id="main">
             <a href="<c:out value="${pageContext.servletContext.contextPath}"/>">@ TimeFinder Corp. 2012</a>
         </footer>
