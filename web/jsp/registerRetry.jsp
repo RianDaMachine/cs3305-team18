@@ -1,3 +1,7 @@
+<!--
+ * Author : Luke Murphy
+-->
+
 <%@page language="java" contentType="text/html"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.*"%>
@@ -11,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="<c:out value="${pageContext.servletContext.contextPath}"/>/css/login_structure.css">
             
         <% 
+                   //Get errors for registration
                    Hashtable errors = (Hashtable) session.getAttribute("errors");
                    String uid = (String) errors.get("uid");
                    String pwd = (String) errors.get("password");

@@ -1,3 +1,7 @@
+<!--
+ * Author : Luke Murphy
+-->
+
 <%@page language="java" contentType="text/html"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.*"%>
@@ -10,11 +14,13 @@
         <link rel="stylesheet" type="text/css" href="<c:out value="${pageContext.servletContext.contextPath}"/>/css/login_structure.css">
             
                <% 
+                //Error initialisation
                 String userErr="";
                 String passErr="";
                 String userReturn="";
                 String passReturn="";
                 
+               //check if there are errors to be shown
                if( session.getAttribute("loginErr") != null ){
                     Hashtable errors = (Hashtable) session.getAttribute("loginErr");
                     userErr = (String) errors.get("username");

@@ -1,3 +1,8 @@
+<!--
+ * Author : Luke Murphy
+ * CoAuthor : Liz Hayes
+-->
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="classes.beans.UserBean"%>
 <%@page import="classes.SoloScheduleServlet"%>
@@ -11,11 +16,11 @@
         <link rel="stylesheet" href="<c:out value="${pageContext.servletContext.contextPath}"/>/jquery/development-bundle/themes/base/jquery.ui.all.css">
         <link rel="stylesheet" type="text/css" href="<c:out value="${pageContext.servletContext.contextPath}"/>/css/login_structure.css">
 
+        <!-- Include might be cleaner !! -->
         <script src="<c:out value="${pageContext.servletContext.contextPath}"/>/jquery/development-bundle/jquery-1.7.1.js"></script>
         <!--<script> var jq171 = jQuery.noConflict(true); </script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
         <script> var jq144 = jQuery.noConflict(); </script>-->
-
         <script src="<c:out value="${pageContext.servletContext.contextPath}"/>/jquery/development-bundle/external/jquery.bgiframe-2.1.2.js"></script>
         <script src="<c:out value="${pageContext.servletContext.contextPath}"/>/jquery/development-bundle/ui/jquery.ui.core.js"></script>
         <script src="<c:out value="${pageContext.servletContext.contextPath}"/>/jquery/development-bundle/ui/jquery.ui.widget.js"></script>
@@ -30,62 +35,60 @@
         <script src="<c:out value="${pageContext.servletContext.contextPath}"/>/jquery/timetable.js"></script>
         <script src="<c:out value="${pageContext.servletContext.contextPath}"/>/jquery/tumblrtags.js"></script>
 
-        <%  SoloScheduleServlet sched = new SoloScheduleServlet();
-            String[] info = new String[4];
-        %>
-
-
         <script type="text/javascript" charset="utf-8">
-
             $(document).ready(function () {
                 $('.tag-editor').tumblertags();
             });
-
         </script>
-
+        
+        <%  
+          // responsible for event information retrieval
+          SoloScheduleServlet sched = new SoloScheduleServlet();
+          String[] info = new String[4];
+        %>
     </head>
     <body>
 
 
-        <div id="wrapper_menu"><!-- BEGIN MENU WRAPPER -->
-            <ul class="menu menu_black"><!-- BEGIN MENU -->
+        <div id="wrapper_menu">
+            <ul class="menu menu_black">
                 <li><a href="main" class="drop">Home</a> </li>
                 <li><a href="Admin" class="drop">Admin</a></li>
                 <li><a href="Help" class="drop">Help</a></li>
                 <li class="nodrop"><a href="Logout">Logout</a></li>
                 <li class="right"><a href="#" class="drop">Contact</a>
-                    <div class="dropdown_2columns align_right"><!-- Begin right aligned container -->
+                    <div class="dropdown_2columns align_right">
                         <div class="col_2 firstcolumn">
                             <h2>Contact Us</h2>
-                            <form action="/Contact" method="POST"><!-- Begin contact form -->
+                            <form action="/Contact" method="POST">
                                 <fieldset>
                                     <p><label>Subject</label><input name="subject" type="text" size="30" /></p>
                                     <p><label>Message</label><textarea name="text" cols="30" rows="10"></textarea></p>		
                                     <button type="submit" class="submit">Send</button>
                                 </fieldset>		
-                            </form><!-- End contact form -->
+                            </form>
                         </div>
-                    </div><!-- End right aligned container -->
-                </li><!-- End Contact Item -->
-            </ul><!-- END MENU -->
-        </div><!-- END MENU WRAPPER -->
+                    </div>
+                </li>
+            </ul>
+        </div>
 
 
         <table id="table">
-
             <thead>
                 <tr>
-                    <!-- MONTH , DATE , SCROLL BARS , DIFFERENT VIEWS -->
+                    <!-- Different view , scrollable month / week  -->
                     <th></th>
                     <th></th>
                     <th></th>
-                    <th>March </th>
+                    <th>March</th>
                     <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
                 </tr>
                 <tr>
+                    <!-- Dynamicall generated ?? -->
                     <th>GMT+0 </th>
                     <th>Monday 19th </th>
                     <th>Tuesday 20th</th>
@@ -97,6 +100,10 @@
                 </tr>
             </thead>
             <tbody>
+                
+                <!-- Vanilla JSP version -->
+                <!-- No Javascript working yet for calendar events -->
+                <!-- All dates and times are hardcoded to a one week period -->
                 <tr>
                     <th>08.00</th>
                     <td <% if (sched.testSlot(userBean.getUid(), 1, 0)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
@@ -927,16 +934,15 @@
                 </tr>
             </tbody>
         </table>
-
     </div>
 
+    <!-- Start of forms -->
+    
     <div class="demo">
-
         <div id="editRemove" title="Choose Type">
             <button class="edit">Edit?</button>
             <button class="remove">Remove?</button>
         </div> 
-
         <div class="removeForm">  
             <form action="editRemove" method="POST">
                 <div class="scheduleInfo">
@@ -985,10 +991,7 @@
                 </div>
             </form>
         </div>
-
-
-
-
+        
         <div id="formOption" title="Choose Type">
             <button class="groupForm">Group / Several</button>
             <button class="self">Personal</button>
@@ -1036,7 +1039,6 @@
                     <option value="10">10</option>
                 </select>
 
-                <!-- Jscript no ready yet ,here is vanilla solution -->
                 <label for="when">Time</label>
                 <select name="time" >
                     <option value="0">08.00</option>
@@ -1055,7 +1057,6 @@
                     <option value="13">21.00</option>
                 </select>
 
-                <!-- Jscript no ready yet ,here is vanilla solution -->
                 <label for="when">Day</label>
                 <select name="day" >
                     <option value="0">Sun</option>
@@ -1129,12 +1130,9 @@
             </form>
         </div>   
 
-
         <footer id="main">
             <a href="/">@ TimeFinder Corp. 2012</a>
         </footer>
-
-
 
 </body>
 </html>

@@ -1,3 +1,7 @@
+<!--
+ * Author : Luke Murphy
+-->
+
 <%@ page import="java.sql.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="classes.SuperUserServlet" %>
@@ -14,11 +18,11 @@
 
     </head>
     <body>
-        <div id="wrapper_menu"><!-- BEGIN MENU WRAPPER -->
-            <ul class="menu menu_black"><!-- BEGIN MENU -->
+        <div id="wrapper_menu">
+            <ul class="menu menu_black">
                 <li class="nodrop"><a href="Logout">Logout</a></li><!-- No Drop Down Item -->
-            </ul><!-- END MENU -->
-        </div><!-- END MENU WRAPPER -->
+            </ul>
+        </div>
 
         <div  class="box admin">
             <div class="boxBody">

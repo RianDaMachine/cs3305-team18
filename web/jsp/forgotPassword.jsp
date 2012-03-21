@@ -1,3 +1,7 @@
+<!--
+ * Author : Luke Murphy
+-->
+
 <%@page language="java" contentType="text/html"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.*"%>
@@ -12,10 +16,8 @@
     <body>
         <form action="mailPassword" method="POST" class="box login">
             <fieldset class="boxBody">
-                
                 <label>Email Address</label>
-                <input type="text" name="email" value="" tabindex="1" placeholder="Email" required>
-                     
+                <input type="text" name="email" value="" tabindex="1" placeholder="Email" required>  
             </fieldset>
             <p id="specify">Please specify your email address.</p>
             <p class="alignCenter">If this is a valid email address in the system ,  </p>
