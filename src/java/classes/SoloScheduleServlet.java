@@ -77,7 +77,7 @@ public class SoloScheduleServlet extends HttpServlet {
         dataManager.setDbUserName("root");
         dataManager.setDbPassword("password");
 
-        System.out.println(uid +  " , "  + day + " , " + time);
+        System.out.println("HERE IS : " + uid +  " , "  + day + " , " + time);
         
         info = dataManager.getSlot(uid, day, time);
         

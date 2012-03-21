@@ -573,25 +573,33 @@ public class DataManager {
         if (conn != null) {
             Statement stmt = null;
             ResultSet rs = null;
+            String muid = "";
 
             try {
                 
-                //SELECT muid
-                //FROM  schedules
-                //WHERE schedules.day = 4 AND schedules.time = 5;
+                String getMuid =  " SELECT muid "
+                                + " FROM schedules "
+                                + " WHERE schedules.day = " + day + " AND schedules.time = " + time +";";
                 
-                String strQuery = "";
-                
-                //DELETE FROM meetinglist 
-                //WHERE meetinglist.muid = VAR;
-
-
-               //DELETE FROM schedules
-                //WHERE schedules.muid =  VAR;
-
                 stmt = conn.createStatement();
-                rs = stmt.executeQuery(strQuery);
+                rs = stmt.executeQuery(getMuid);
+                
+                while(rs.next()) {
+                    muid = rs.getString("muid");
+                }
+                
+                System.out.println( "MUID : " + muid );
+                
+                String meetListRemove = " DELETE FROM meetinglist "
+                                        + " WHERE meetinglist.muid = " + muid +";";
+                String schedRemove = " DELETE FROM schedules "
+                                   + " WHERE schedules.muid = " + muid +";";
+                
+                int rowOne = stmt.executeUpdate(meetListRemove);
+                int rowTwo = stmt.executeUpdate(schedRemove);
+
             } catch (SQLException ex) {
+                ex.printStackTrace();
                 logger.log(Level.WARNING, "SQL removeEvent error!");
             } finally {
                 try {
