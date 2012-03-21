@@ -365,6 +365,10 @@ ____________________________________________*/
 
 /* Labels & fieldsets stylings */
 
+.menu h2{
+   font-size: 20px; 
+}
+
 .menu fieldset {
 	margin:0;
 	border:none;
@@ -380,6 +384,7 @@ ____________________________________________*/
 	display:block;
 	text-align:left;
 	width:50px;
+        font-size: 12px;
 }	
 .menu input,
 .menu textarea {	
