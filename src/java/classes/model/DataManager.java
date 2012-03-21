@@ -1,44 +1,38 @@
+/*
+ * Author : lwm1
+ * Student Number : 109765255
+ */
+
 package classes.model;
 
 import classes.beans.UserBean;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-/*
- * Javabean with database operation methods
- */
+import java.sql.*;
+import java.util.*;
+import java.util.logging.*;
+
+//All Database connectivity handled here
 public class DataManager {
 
+    //DB strings
     private String dbURL = "";
     private String dbUserName = "";
     private String dbPassword = "";
-    private static String notVerified = "";
-    private static boolean verified;
+    //select from 'chars' for random string
     private String chars = "ABCDEFGHIJKLMNOPQRSTUVWYXZ12345678910";
     private static final Logger logger = Logger.getLogger(DataManager.class.getName());
     private static final UserBean isPresentBean = new UserBean();
+    private static boolean verified;
+    private static String notVerified = "";
 
+    // DATABASE CONNECTION / CONFIGURATION METHODS
+    
     public void setDbURL(String dbURL) {
         this.dbURL = dbURL;
     }
 
     public String getDbURL() {
         return dbURL;
-    }
-
-    public String getNotVerified() {
-        return this.notVerified;
-    }
-
-    public boolean checkVerified() {
-        return this.verified;
-    }
-
-    public UserBean getIsPresentBean() {
-        return this.isPresentBean;
     }
 
     public void setDbUserName(String dbUserName) {
@@ -76,6 +70,24 @@ public class DataManager {
                 logger.log(Level.WARNING, "Unable to close DB connection!");
             }
         }
+    }
+    
+     // END
+    
+    //non verified lecturer error message
+    public String getNotVerified() {
+        return this.notVerified;
+    }
+
+    //lecturer verified - true/false
+    public boolean checkVerified() {
+        return this.verified;
+    }
+
+    //is user already in the DB?
+    //return bean with info if present
+    public UserBean getIsPresentBean() {
+        return this.isPresentBean;
     }
 
     public int getUserGroupId(String userType) {
@@ -149,7 +161,9 @@ public class DataManager {
         return group;
     }
 
-    // End of getters / setters 
+    //MD5 a password String
+    //Borrowed from somewhere on StackOverflow
+    //lost this URL again..shoot me...
     public String MD5(String md5) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
@@ -188,6 +202,7 @@ public class DataManager {
         }
     }
 
+    //Registration details insertion into database
     public void putDetails(UserBean regBean) {
         Connection conn = getConnection();
         Statement stmt = null;
@@ -200,7 +215,6 @@ public class DataManager {
             int insertGroup;
 
             try {
-
                 String strQuery = "INSERT INTO users  VALUES ( " + regBean.getUid() + " ,'"
                         + regBean.getFirstName() + "','" + regBean.getLastName()
                         + "','" + regBean.getEmail() + "','" + encrpytedPwd + "');";
@@ -237,8 +251,7 @@ public class DataManager {
         boolean isValid = true;
         Connection conn = getConnection();
         String pwd = MD5(password);
-        System.out.println(pwd);
-
+        
         if (conn != null) {
 
             ResultSet rs = null;
@@ -410,6 +423,8 @@ public class DataManager {
         return userBean;
     }
 
+    //get a random string
+    //StackOverflow again...lost again...
     public static String generateString(Random rng, String characters, int length) {
         char[] text = new char[length];
         for (int i = 0; i < length; i++) {
@@ -418,6 +433,7 @@ public class DataManager {
         return new String(text);
     }
 
+    //check if user is already registered
     public boolean alreadyInDb(UserBean regBean) {
         boolean isPresent = false;
 
@@ -457,6 +473,7 @@ public class DataManager {
         return isPresent;
     }
 
+    //when resetting password , all we have is email
     public UserBean getDetailsFromEmail(String email) {
         UserBean bean = new UserBean();
         Connection conn = getConnection();
@@ -512,7 +529,7 @@ public class DataManager {
                 stmt = conn.createStatement();
                 int one = stmt.executeUpdate(strMeetingList);
                 //duration
-                for ( int i = 0; i < duration ; i++) {
+                for (int i = 0; i < duration; i++) {
                     String strSoloSched = " INSERT INTO schedules(uid , week , day , time , note , title , muid) "
                             + " VALUES (" + uid + " , " + week + " , "
                             + day + " , " + (time + i) + " , ' " + comments + " ' , ' " + title + " ' , " + muid + " )";
@@ -526,6 +543,7 @@ public class DataManager {
         }
     }
 
+    //get event information for calendar slot
     public String[] getSlot(String uid, int day, int time) {
         String[] info = new String[4];
 

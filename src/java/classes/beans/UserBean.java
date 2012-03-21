@@ -1,8 +1,11 @@
+/*
+ * Author : lwm1
+ * Student Number : 109765255
+ */
+
 package classes.beans;
 
-/**
- * UserBean Relevant session info
- */
+//user session bean information
 public class UserBean {
 
     private String uid;         //Username

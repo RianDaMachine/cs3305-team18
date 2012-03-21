@@ -1,39 +1,32 @@
+/*
+ * Author : lwm1
+ * Student Number : 109765255
+ */
+
 package classes.model;
 
 import classes.beans.UserBean;
 import java.util.Hashtable;
 
+//registration validation
 public class Validation {
-    
+
     private Hashtable validationErr = new Hashtable();
-    public static final String EMAIL_REGEX = 
-            "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
     
-    /*
-     * Retrieve registration validationErr Hashtable
-     */
+    //email validation - 
+    //borrowed from somewhere deep in StackOverflow , link lost in the cosmos
+    public static final String EMAIL_REGEX =
+            "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+
+    //Retrieve registration validationErr Hashtable
     public Hashtable getvalidationErr() {
         return this.validationErr;
     }
-    
-    
-    /*
-     * Validate parameters for student
-     */
-    public boolean validate( UserBean regBean , String uid , String password  , String fName, String lName, String email , String userType  ) {
-        
+
+    //Validate parameters for registration
+    public boolean validate(UserBean regBean, String uid, String password, String fName, String lName, String email, String userType) {
         boolean validReg = true;
-        
-        System.out.println("STARTS HERE");
-        System.out.println(uid);
-        System.out.println(password);
-        System.out.println(fName);
-        System.out.println(lName);
-        System.out.println(email);
-        System.out.println(userType);
-        
-        
-        
+
         if (uid.length() == 9) {
             regBean.setUid(uid);
             validationErr.put("uid", "");
@@ -42,7 +35,7 @@ public class Validation {
             validationErr.put("uid", "**Invalid User ID - Your ID must be 9 characters long");
             validReg = false;
         }
-        
+
         if (password.length() > 2 && password.length() < 10) {
             regBean.setPassword(password);
             validationErr.put("password", "");
@@ -51,7 +44,7 @@ public class Validation {
             validationErr.put("password", "**Invalid password -  must be less than 10 characters");
             validReg = false;
         }
-        
+
         if (fName.length() > 2 && fName.length() < 10) {
             regBean.setFirstName(fName);
             validationErr.put("fname", "");
@@ -70,7 +63,7 @@ public class Validation {
             validReg = false;
         }
 
-        if ( email.matches(EMAIL_REGEX) ) {
+        if (email.matches(EMAIL_REGEX)) {
             regBean.setEmail(email);
             validationErr.put("email", "");
         } else {
@@ -81,4 +74,3 @@ public class Validation {
         return validReg;
     }
 }
-    
