@@ -47,8 +47,6 @@ public class LoginServlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("\n\n\n");
-        System.out.println("DEBUGGING STARTS HERE \n");
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
         HttpSession session = request.getSession(true);
@@ -56,7 +54,6 @@ public class LoginServlet extends HttpServlet {
         if (validLogin(userName, password)) {
             
             if( userName.equals("000000000")) {
-                System.out.println("SUPER USER HERE");
                 response.sendRedirect("/timeFinder/superUser");
             }else {
             
@@ -65,16 +62,11 @@ public class LoginServlet extends HttpServlet {
             
             session.setAttribute("userBean", userBean);
             session.setAttribute("uid", userBean.getUid());
-            
-            System.out.print( "Uid is this mofucka : " + userBean.getUid() + "\n\n" );
-            
-            System.out.println("LOGINURL = " + loginURL );
             //RequestDispatcher dispatcher = request.getRequestDispatcher( loginURL );
             response.sendRedirect("/timeFinder/main"); // is this safe? Unconfigured...need to import context to servlet.
             //dispatcher.forward(request, response);
             }
         } else {
-            System.out.println("ERRORS !");
             session.setAttribute("loginErr", loginErr);
             //RequestDispatcher dispatcher = request.getRequestDispatcher("/");
             response.sendRedirect("/timeFinder/");
@@ -87,13 +79,10 @@ public class LoginServlet extends HttpServlet {
         // check username
         if (!dataManager.checkUid(uid)) {
             //not valid!
-            System.out.println("checkVerfied : " + dataManager.checkVerified());
             if ( ! dataManager.checkVerified() ) {
-                System.out.println("I WENT IN HERE!");
                 loginErr.put("username", dataManager.getNotVerified());
                 loginErr.put("userReturn", "");
             }else {
-                System.out.println("VERIFIED");
                 // is a verified lecturer
                 loginErr.put("username", "Invalid user ID");
                 loginErr.put("userReturn", "");

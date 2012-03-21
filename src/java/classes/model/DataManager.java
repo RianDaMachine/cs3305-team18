@@ -220,6 +220,7 @@ public class DataManager {
                 }
 
             } catch (SQLException ex) {
+                ex.printStackTrace();
                 logger.log(Level.WARNING, "SQL putDetails error!");
             } finally {
                 try {

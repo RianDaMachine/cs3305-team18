@@ -6,6 +6,7 @@
 	z-index:9999;
 }
 .menu {
+    background-color: black;
 	list-style:none;
 	width:940px;
 	margin:30px auto 0px auto;
@@ -73,18 +74,14 @@
 
 /*  _______________________________________
 
-	02 DROP DOWN MENU
+	 DROP DOWN MENU
     _______________________________________  */
 
 
 
 /* Left & right aligned common styles */
-
-.menu .dropdown_1column, 
+ 
 .menu .dropdown_2columns, 
-.menu .dropdown_3columns, 
-.menu .dropdown_4columns,
-.menu .dropdown_5columns,
 .menu .dropdown_fullwidth {
 	margin:4px auto;
 	left:-999em;
@@ -122,64 +119,12 @@
 	top:33px;
 }
 
-/*  _______________________________________
-
-	03 CONTENT STYLING
-    _______________________________________  */
-
-
-
-.menu p,
-.menu ul,
-.menu li,
-.menu h2,
-.menu h3 {
-	font-size:14px; 
-	font-family:Arial, Helvetica, sans-serif;
-	line-height:21px;
-	text-align:left;
-}
-.menu p {
-	font-size:12px;
-	line-height:18px;
-	margin:0;
-	margin-bottom:10px;
-	text-shadow: 1px 1px 1px #FFFFFF;
-}
-.menu .strong {
-	font-weight:bold;
-}
-.menu .italic {
-	font-style:italic;
-}
-.menu h2, 
-.menu h3 {
-	text-shadow: 1px 1px 1px #FFFFFF;
-	border-bottom:1px solid #888888;
-	margin-top:7px;
-}
-.menu h2 {
-	font-weight:400;
-	font-size:21px;
-	margin-bottom:18px;
-	padding-bottom:11px;
-}
-.menu h3 {
-	font-weight:600;
-	font-size:14px;
-	margin-bottom:14px;
-	padding-bottom:7px;
-}
 .menu li:hover div a {
 	text-decoration:none;
 	text-shadow:none;
 	border:none;
 	padding:0;
 }
-
-
-
-
 
 /*  _______________________________________
 
@@ -189,7 +134,7 @@
 
 
 .menu form {
-	margin:0 0 12px 0;
+	margin:0 0 15px 0;
 	padding:0px;
 }
 
