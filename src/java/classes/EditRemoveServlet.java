@@ -1,7 +1,7 @@
 /*
- * Author : lwm1
- * Student Number : 109765255
+ * Author : Luke Murphy
  */
+
 package classes;
 
 import javax.servlet.*;
