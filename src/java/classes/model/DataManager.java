@@ -2,6 +2,7 @@ package classes.model;
 
 import classes.beans.UserBean;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -200,11 +201,11 @@ public class DataManager {
 
             try {
 
-                String strQuery = "INSERT INTO users  VALUES ('" + regBean.getUid() + "','"
+                String strQuery = "INSERT INTO users  VALUES ( " + regBean.getUid() + " ,'"
                         + regBean.getFirstName() + "','" + regBean.getLastName()
                         + "','" + regBean.getEmail() + "','" + encrpytedPwd + "');";
 
-                String setGroup = "INSERT INTO groupmapping VALUES('" + regBean.getUid() + "','" + userGroupId + "');";
+                String setGroup = "INSERT INTO groupmapping VALUES( " + regBean.getUid() + " , " + userGroupId + " );";
 
                 stmt = conn.createStatement();
                 insertRow = stmt.executeUpdate(strQuery);
@@ -213,7 +214,7 @@ public class DataManager {
                 if (regBean.getUserGroup().equals("lecturer")) {
                     // make an entry in the 'yet to be validated table'
                     String strLecturer = " INSERT INTO validlecturer "
-                            + " VALUES ( '" + regBean.getUid() + "'," + 0 + " );";
+                            + " VALUES ( " + regBean.getUid() + " , " + 0 + " );";
                     stmt = conn.createStatement();
                     insertRow = stmt.executeUpdate(strLecturer);
                 }
@@ -567,7 +568,7 @@ public class DataManager {
         return info;
     }
 
-    public void removeEvent( String uid , int day , int time) {
+    public void removeEvent(String uid, int day, int time) {
         Connection conn = getConnection();
 
         if (conn != null) {
@@ -576,31 +577,102 @@ public class DataManager {
             String muid = "";
 
             try {
-                
-                String getMuid =  " SELECT muid "
-                                + " FROM schedules "
-                                + " WHERE schedules.day = " + day + " AND schedules.time = " + time +";";
-                
+
+                String getMuid = " SELECT muid "
+                        + " FROM schedules "
+                        + " WHERE schedules.day = " + day + " AND schedules.time = " + time + ";";
+
                 stmt = conn.createStatement();
                 rs = stmt.executeQuery(getMuid);
-                
-                while(rs.next()) {
+
+                while (rs.next()) {
                     muid = rs.getString("muid");
                 }
-                
-                System.out.println( "MUID : " + muid );
-                
+
+                System.out.println("MUID : " + muid);
+
                 String meetListRemove = " DELETE FROM meetinglist "
-                                        + " WHERE meetinglist.muid = " + muid +";";
+                        + " WHERE meetinglist.muid = " + muid + ";";
                 String schedRemove = " DELETE FROM schedules "
-                                   + " WHERE schedules.muid = " + muid +";";
-                
+                        + " WHERE schedules.muid = " + muid + ";";
+
                 int rowOne = stmt.executeUpdate(meetListRemove);
                 int rowTwo = stmt.executeUpdate(schedRemove);
 
             } catch (SQLException ex) {
                 ex.printStackTrace();
                 logger.log(Level.WARNING, "SQL removeEvent error!");
+            } finally {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    logger.log(Level.WARNING, "Could not close the Statement variable!");
+                }
+                putConnection(conn);
+            }
+        }
+    }
+
+    public ArrayList<String> getNonVerifiedLecturers() {
+        Connection conn = getConnection();
+        ArrayList<String> lecturers = new ArrayList<String>();
+
+        if (conn != null) {
+            Statement stmt = null;
+            ResultSet rs = null;
+
+            try {
+
+                String getLect = " SELECT users.uid , fname , lname , email "
+                        + " FROM users , validlecturer "
+                        + " WHERE users.uid = validlecturer.uid AND valid = 0 ; ";
+
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(getLect);
+
+                while (rs.next()) {
+                    int uid = rs.getInt("uid");
+                    String strUid = Integer.toString(uid);
+
+                    String info = strUid + " , " + rs.getString("fname") + " , "
+                            + rs.getString("lname") + " , " + rs.getString("email");
+                    lecturers.add(info);
+                }
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                logger.log(Level.WARNING, "SQL getNonVerifiedLecturers error!");
+            } finally {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    logger.log(Level.WARNING, "Could not close the Statement variable!");
+                }
+                putConnection(conn);
+            }
+        }
+        return lecturers;
+    }
+
+    public void validateLecturer( int uid ) {
+        Connection conn = getConnection();
+
+        if (conn != null) {
+            Statement stmt = null;
+            ResultSet rs = null;
+
+            try {
+
+                String valLect = " UPDATE validlecturer "
+                        + " SET valid = 1 "
+                        + " WHERE uid = " + uid + " ; ";
+
+                stmt = conn.createStatement();
+                int row = stmt.executeUpdate(valLect);
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                logger.log(Level.WARNING, "SQL validateLecturer error!");
             } finally {
                 try {
                     stmt.close();

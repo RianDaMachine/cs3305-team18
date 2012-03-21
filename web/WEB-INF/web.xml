@@ -52,14 +52,6 @@
         <jsp-file>/jsp/forgotPassword.jsp</jsp-file>
     </servlet>
     <servlet>
-        <servlet-name>Student</servlet-name>
-        <jsp-file>/jsp/student.jsp</jsp-file>
-    </servlet>
-    <servlet>
-        <servlet-name>Lecturer</servlet-name>
-        <jsp-file>/jsp/lecturer.jsp</jsp-file>
-    </servlet>
-    <servlet>
         <servlet-name>RegisterRetry</servlet-name>
         <jsp-file>/jsp/registerRetry.jsp</jsp-file>
     </servlet>
@@ -103,7 +95,10 @@
         <servlet-name>EditRemoveServlet</servlet-name>
         <servlet-class>classes.EditRemoveServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
+    <servlet>
+        <servlet-name>SuperUserServlet</servlet-name>
+        <servlet-class>classes.SuperUserServlet</servlet-class>
+    </servlet><servlet-mapping>
         <servlet-name>Index</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
@@ -134,14 +129,6 @@
     <servlet-mapping>
         <servlet-name>ForgetPassword</servlet-name>
         <url-pattern>/forgot</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Student</servlet-name>
-        <url-pattern>/Student</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Lecturer</servlet-name>
-        <url-pattern>/Lecturer</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RegisterRetry</servlet-name>
@@ -186,6 +173,10 @@
     <servlet-mapping>
         <servlet-name>EditRemoveServlet</servlet-name>
         <url-pattern>/editRemove</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SuperUserServlet</servlet-name>
+        <url-pattern>/superUserServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>5</session-timeout>

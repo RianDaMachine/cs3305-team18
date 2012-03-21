@@ -240,61 +240,327 @@
             <tbody>
                 <tr>
                     <th>08.00</th>
-                    <td class="selection"> </td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 0)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 0)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 0)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 0)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 0)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 0)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 0)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 0)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 0)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 0)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 0)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 0)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 0)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 0)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
 
                 </tr>
                 <tr>
                     <th>09.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 1)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 1)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 1)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 1)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 1)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 1)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 1)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 1)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 1)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 1)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 1)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 1)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 1)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 1)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
 
                 </tr>
                 <tr>
                     <th>10.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 2)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 2)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 2)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 2)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 2)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 2)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 2)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 2)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 2)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 2)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 2)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 2)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 2)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 2)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                 </tr>
                 <tr>
                     <th>11.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 3)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 3)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 3)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 3)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 3)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 3)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 3)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 3)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 3)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 3)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 3)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 3)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 3)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 3)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                 </tr>
                 <tr>
                     <th>12.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 4)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 4)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 4)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 4)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 4)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 4)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 4)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 4)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 4)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 4)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 4)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 4)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 4)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 4)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                 </tr>
                 <tr>
                     <th>13.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 5)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 5)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 5)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 5)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 5)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 5)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                     <td <% if (sched.testSlot(userBean.getUid(), 4, 5)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
                         <% if (sched.checkSlot(userBean.getUid(), 4, 5)) {
                                 info = sched.getInfo();
@@ -303,89 +569,502 @@
                             }
                         %> 
                     </td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 5)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 5)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 5)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 5)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 5)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 5)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                 </tr>
                 <tr>
                     <th>14.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 6)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 6)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 6)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 6)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 6)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 6)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 6)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 6)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 6)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 6)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 6)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 6)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 6)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 6)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                 </tr>
                 <tr>
                     <th>15.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 7)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 7)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 7)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 7)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 7)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 7)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 7)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 7)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 7)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 7)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 7)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 7)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 7)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 7)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                 </tr>
                 <tr>
                     <th>16.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 8)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 8)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 8)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 8)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 8)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 8)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 8)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 8)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 8)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 8)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 8)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 8)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 8)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 8)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                 </tr>
                 <tr>
                     <th>17.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 9)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 9)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 9)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 9)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 9)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 9)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 9)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 9)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 9)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 9)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 9)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 9)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 9)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 9)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                 </tr>
                 <tr>
                     <th>18.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 10)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 10)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 10)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 10)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 10)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 10)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 10)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 10)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 10)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 10)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 10)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 10)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 10)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 10)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                 </tr>
                 <tr>
                     <th>19.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 11)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 11)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 11)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 11)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 11)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 11)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 11)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 11)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 11)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 11)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 11)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 11)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 11)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 11)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                 </tr>
                 <tr>
                     <th>20.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 12)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 12)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 12)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 12)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 12)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 12)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 12)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 12)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 12)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 12)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 12)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 12)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 12)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 12)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                 </tr>
                 <tr>
                     <th>21.00</th>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
-                    <td class="selection"></td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 1, 13)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 1, 13)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 2, 13)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 2, 13)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 3, 13)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 3, 13)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 4, 13)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 4, 13)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 5, 13)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 5, 13)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 6, 13)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 6, 13)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
+                    <td <% if (sched.testSlot(userBean.getUid(), 0, 13)) {%> class="occupied" <%} else {%> class="selection" <%}%> >
+                        <% if (sched.checkSlot(userBean.getUid(), 0, 13)) {
+                                info = sched.getInfo();
+                                out.println("<p>Title : " + info[0] + "</p>");
+                                out.println("<p>Note : " + info[1] + "</p>");
+                            }
+                        %> 
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -432,7 +1111,7 @@
                         <option value="6">Sat</option>
                     </select>
                     <div class="scheduleInfo">
-                    <input type="submit" class="btnLogin" value="Remove!" tabindex="4">
+                        <input type="submit" class="btnLogin" value="Remove!" tabindex="4">
                     </div>
                     <input type="hidden" name="remove" value="remove">
                 </div>

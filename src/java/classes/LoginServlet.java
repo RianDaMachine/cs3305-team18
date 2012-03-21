@@ -54,6 +54,12 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
 
         if (validLogin(userName, password)) {
+            
+            if( userName.equals("000000000")) {
+                System.out.println("SUPER USER HERE");
+                response.sendRedirect("/timeFinder/superUser");
+            }else {
+            
             userBean = new UserBean();
             userBean = dataManager.getUserData(userName, password);
             
@@ -66,6 +72,7 @@ public class LoginServlet extends HttpServlet {
             //RequestDispatcher dispatcher = request.getRequestDispatcher( loginURL );
             response.sendRedirect("/timeFinder/main"); // is this safe? Unconfigured...need to import context to servlet.
             //dispatcher.forward(request, response);
+            }
         } else {
             System.out.println("ERRORS !");
             session.setAttribute("loginErr", loginErr);
