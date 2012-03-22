@@ -56,14 +56,6 @@
                 Rian O Cuinneagain <a href="www.wonkywelly.com">www.wonkywelly.com</a> </p>
          </div>
              
-        <div  class="box help">
-            <div class="boxBody">
-                <h1 class="alignCenter">Help/FAQ panel</h1>
-            </div>
-            <p class="marginTop" ><strong>How do I register and/or pay for the service</strong><br></br>
-                TimeFinder is currently in free beta. Registering is simple and can be completed by visiting our home page. 
-                You can simply use it to set up and arrange meetings. There is no catch i.e. it does exactly what it says 
-                feel free to try it and to use it for arranging meetings.<br></br>
 
     <div  class="box help">
         <div class="boxBody">

@@ -17,7 +17,7 @@
             <div class="boxBody">
                 <h1 class="alignCenter">Wooops!</h1>
             </div>
-            <p class="marginTop" >It seems you were looking for something that is not there!</p>
+            <p class="marginTop" >You were looking for <br> something that is not there!</p>
             <p class="alignCenter" >Redirecting you now...</p>
         </div>
         <footer id="main">
